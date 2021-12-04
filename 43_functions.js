@@ -7,7 +7,7 @@
 function getHypotenuse(a, b) {
 	return (a*a + b*b) ** 0.5
 }
-const c = getHypotenuse(3, 4)  // c is now: 5
+const Hypotenuse = getHypotenuse(3, 4)  // c is now: 5
 
 
 
