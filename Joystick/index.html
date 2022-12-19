@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello!</title>
+    <meta name="description" content="description"/>
+    <meta name="author" content="author" />
+    <meta name="keywords" content="keywords" />
+    <style type="text/css">.body { width: auto; }
+    svg {width: 100vmin;}
+    </style>
+  </head>
+
+  <body>
+    <svg viewBox="0 0 100 100">
+        <circle r = "40" cx="50" cy="50"></circle>
+        <circle class="innerCircle" r = "10" cx="50" cy="50" fill="rgb(255,0,0)"></circle>
+      </svg>
+
+    <script>
+        var innerCircle = document.querySelector(".innerCircle")
+        document.addEventListener("touchmove", (event)=>{
+            x = event.touches[0].pageX
+            y = event.touches[0].pageY
+            mindim = Math.min(window.innerWidth, window.innerHeight)
+
+            console.log(x, y);
+            innerCircle.setAttribute("cx", x * 100 / mindim)
+            innerCircle.setAttribute("cy", y * 100 / mindim)
+        })
+    </script>
+
+  </body>
+    
+</html>
