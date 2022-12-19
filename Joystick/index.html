@@ -15,7 +15,7 @@
   <body>
     <svg viewBox="0 0 100 100">
         <circle r = "40" cx="50" cy="50"></circle>
-        <circle class="innerCircle" r = "10" cx="50" cy="50" fill="rgb(255,0,0)"></circle>
+        <circle class="innerCircle" r = "10" cx="50" cy="50" fill="rgb(50,50,255)"></circle>
       </svg>
 
     <script>
@@ -33,7 +33,7 @@
 
         connect()
 
-        document.addEventListener("touchmove", (event)=>{
+         document.addEventListener("touchmove", (event)=>{
             mindim = Math.min(window.innerWidth, window.innerHeight)
             px = event.touches[0].pageX
             py = event.touches[0].pageY
@@ -55,11 +55,13 @@
             console.log(x, y);
             innerCircle.setAttribute("cx", xin + 50)
             innerCircle.setAttribute("cy", yin + 50)
+            event.preventDefault()
         })
 
-        document.addEventListener("touchend", (event)=>{
-          px = 0
-          py = 0
+         document.addEventListener("touchend", (event)=>{
+            innerCircle.setAttribute("cx", 50)
+            innerCircle.setAttribute("cy", 50)
+            ws.sendToOpener([0,0])
         })
 
     </script>
