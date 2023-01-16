@@ -6,7 +6,9 @@
     <meta name="description" content="description"/>
     <meta name="author" content="author" />
     <meta name="keywords" content="keywords" />
-    <style type="text/css">body { overscroll-behavior: contain; width: auto; }
+    <style type="text/css">
+    body { overscroll-behavior: contain; width: auto; }
+    html { overscroll-behavior: contain;  }
     svg {width: 90vmin;}
     button {width: 90vmin; padding:20px;
     }
@@ -17,7 +19,7 @@
   <body>
     <svg viewBox="0 0 100 100">
         <circle r = "40" cx="50" cy="50"></circle>
-        <circle class="innerCircle" r = "10" cx="50" cy="50" fill="rgb(50,50,255)"></circle>
+        <circle class="innerCircle" r = "10" cx="50" cy="50" fill="rgb(255,0,0)"></circle>
       </svg>
     
       <div><button>🐍</button></div>
@@ -51,10 +53,9 @@
             yin = y * xyfact
             xsend = xin /30
             ysend = yin /30
-            
+
 
             ws.sendToOpener([xsend, ysend])
-            ws.sendToOpener(["BOOST"])
             console.log(x, y);
             innerCircle.setAttribute("cx", xin + 50)
             innerCircle.setAttribute("cy", yin + 50)
